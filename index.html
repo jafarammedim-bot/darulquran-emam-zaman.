@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b3327">
+  <meta name="description" content="وب‌سایت معرفی دارالقرآن امام‌الزمان (عج)، برنامه‌های آموزشی قرآن کریم، تجوید و حفظ">
+  <title>دارالقرآن امام‌الزمان (عج) | نور قرآن، مسیر زندگی</title>
+  <style>
+    :root{
+      --green:#176344; --green2:#258154; --green3:#359866;
+      --gold:#d8b45f; --gold2:#f4df9f; --cream:#fbfdf8;
+      --ink:#20352a; --muted:#66776b; --line:#e2ebdf; --white:#fff;
+      --shadow:0 18px 50px rgba(22,91,59,.11); --radius:24px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--cream);color:var(--ink);font-family:Tahoma,"Segoe UI",Arial,sans-serif;line-height:1.9}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(1160px,92%);margin-inline:auto}
+    .topbar{background:#e9f5e9;color:#285c42;font-size:13px;border-bottom:1px solid #d6e8d5}
+    .topbar .container{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:8px 0}
+    .topbar span{display:inline-flex;align-items:center;gap:7px}
+    header{position:sticky;top:0;z-index:50;background:rgba(250,255,249,.95);backdrop-filter:blur(14px);border-bottom:1px solid rgba(217,182,109,.25)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:22px;min-height:82px}
+    .brand{display:flex;align-items:center;gap:12px;min-width:220px}
+    .brand-mark{width:58px;height:58px;object-fit:contain;border:1px solid var(--gold);border-radius:14px;background:#fffaf0;padding:3px;box-shadow:0 8px 20px #0b33271f}
+    .brand strong{display:block;color:var(--green);font-size:16px;line-height:1.6}
+    .brand small{display:block;color:#9b7b3f;font-size:11px;letter-spacing:.2px}
+    .navlinks{display:flex;align-items:center;gap:24px;font-size:14px;color:#40564b}
+    .navlinks a:hover{color:var(--green3)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 20px;border-radius:999px;background:var(--gold);color:#2b261a;font-weight:700;border:1px solid transparent;cursor:pointer;font:inherit;font-size:14px;transition:.25s}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px #b18b4530}
+    .btn-outline{background:#ffffffa8;border-color:#b99a5c;color:#285b3d}
+    .btn-green{background:var(--green);color:white}
+    .menu-toggle{display:none;background:none;border:1px solid var(--line);border-radius:12px;padding:9px 12px;font-size:22px;color:var(--green)}
+    .hero{position:relative;overflow:hidden;background:radial-gradient(ellipse at 15% 15%,#d8f0d9 0,transparent 38%),linear-gradient(125deg,#f8fff6,#e9f7e8 58%,#d8efdb);color:#214c35}
+    .hero:before{content:"";position:absolute;inset:0;opacity:.13;background-image:radial-gradient(var(--gold) .7px,transparent .7px);background-size:22px 22px;mask-image:linear-gradient(90deg,#000,transparent 80%)}
+    .hero:after{content:"۞";position:absolute;left:-30px;bottom:-155px;font-size:390px;line-height:1;color:#1763440b;transform:rotate(-12deg);pointer-events:none}
+    .hero-grid{position:relative;display:grid;grid-template-columns:1.12fr .88fr;align-items:center;gap:48px;padding:78px 0 84px;min-height:590px}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;color:#397c50;font-size:13px;font-weight:700;letter-spacing:.2px}
+    .eyebrow:before{content:"";width:28px;height:1px;background:var(--gold)}
+    h1{font-size:clamp(32px,4.2vw,56px);line-height:1.55;margin:15px 0 18px;letter-spacing:-1px}
+    h1 em{font-style:normal;color:#a67b24}
+    .hero-copy{max-width:600px;color:#4d6656;font-size:16px;margin:0 0 28px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-notes{display:flex;gap:24px;flex-wrap:wrap;margin-top:35px;color:#52715c;font-size:12px}
+    .hero-notes span{display:flex;align-items:center;gap:7px}
+    .hero-art{position:relative;min-height:390px;display:grid;place-items:center}
+    .arch{width:min(390px,100%);height:430px;border:1px solid #d9b66d80;border-radius:200px 200px 24px 24px;padding:12px;background:linear-gradient(145deg,#d9b66d55,#ffffff70);position:relative;box-shadow:0 35px 80px #0003}
+    .arch-inner{height:100%;border-radius:190px 190px 16px 16px;overflow:hidden;position:relative;background:linear-gradient(180deg,#d8ead7,#246344)}
+    .arch-inner img{width:100%;height:100%;object-fit:cover;object-position:center 24%;opacity:.91}
+    .arch-inner:after{content:"";position:absolute;inset:45% 0 0;background:linear-gradient(transparent,#123c2be0)}
+    .floating-note{position:absolute;bottom:18px;right:-20px;background:#fffdf6;color:var(--green);border-radius:17px;padding:13px 18px;box-shadow:var(--shadow);font-size:13px;font-weight:700}
+    .floating-note small{display:block;color:#7e806f;font-weight:400}
+    .floating-seal{position:absolute;top:18px;left:-18px;width:86px;height:86px;border-radius:50%;display:grid;place-items:center;text-align:center;background:var(--gold);color:var(--green);border:5px solid #fff5dc;font-size:12px;font-weight:800;line-height:1.5;transform:rotate(-10deg)}
+    .stats{position:relative;margin-top:-30px;z-index:2}
+    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);background:white;border:1px solid #eee5d2;border-radius:22px;box-shadow:var(--shadow);overflow:hidden}
+    .stat{text-align:center;padding:22px 12px;border-left:1px solid var(--line)}
+    .stat:last-child{border-left:0}
+    .stat strong{display:block;color:var(--green);font-size:25px;line-height:1.5}
+    .stat span{font-size:12px;color:var(--muted)}
+    section{padding:86px 0}
+    .section-head{text-align:center;max-width:700px;margin:0 auto 42px}
+    .section-kicker{color:#9a7839;font-weight:800;font-size:12px;letter-spacing:.5px}
+    h2{color:var(--green);font-size:clamp(25px,3vw,36px);line-height:1.5;margin:7px 0 10px}
+    .section-head p{margin:0;color:var(--muted);font-size:14px}
+    .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:52px;align-items:center}
+    .about-photo{position:relative;padding:0 0 22px 22px}
+    .about-photo img{width:100%;height:430px;object-fit:cover;border-radius:26px;box-shadow:var(--shadow)}
+    .about-photo:before{content:"";position:absolute;left:0;bottom:0;width:65%;height:70%;border:2px solid var(--gold);border-radius:26px;z-index:-1}
+    .quote-card{position:absolute;right:-15px;bottom:40px;background:white;border-right:4px solid var(--gold);border-radius:14px;padding:16px 19px;max-width:250px;box-shadow:var(--shadow);font-size:13px;color:var(--green);font-weight:700}
+    .quote-card small{display:block;color:var(--muted);font-weight:400}
+    .about-text p{color:#5b6b62;font-size:15px}
+    .check-list{list-style:none;padding:0;margin:24px 0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .check-list li{display:flex;gap:9px;align-items:center;font-size:13px;color:#3c5146}
+    .check-list li:before{content:"✓";width:23px;height:23px;flex:0 0 23px;border-radius:50%;display:grid;place-items:center;background:#e2efe4;color:#176444;font-weight:900}
+    .programs{background:#f0f8ee}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .program-card{background:white;border:1px solid #e9e1d0;border-radius:22px;padding:26px;transition:.25s;position:relative;overflow:hidden}
+    .program-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+    .program-card:after{content:"";position:absolute;left:-30px;top:-40px;width:120px;height:120px;border:1px solid #d9b66d4a;border-radius:50%}
+    .program-icon{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;background:#e9f1e8;color:var(--green);font-size:27px;margin-bottom:18px}
+    .program-card h3{color:var(--green);margin:0 0 8px;font-size:18px}
+    .program-card p{color:var(--muted);font-size:13px;margin:0 0 17px}
+    .tag{display:inline-block;padding:5px 11px;border-radius:999px;background:#fbf4e3;color:#9b7835;font-size:11px}
+    .teacher-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .teacher-card{border-radius:22px;overflow:hidden;background:white;border:1px solid #eee4d2;box-shadow:0 10px 30px #173b2910}
+    .teacher-card img{width:100%;height:290px;object-fit:cover;object-position:center 25%;background:#eae5d9}
+    .teacher-info{padding:20px}
+    .teacher-info h3{margin:0;color:var(--green);font-size:17px}
+    .teacher-info p{margin:5px 0 0;color:var(--muted);font-size:12px}
+    .teacher-label{display:inline-block;color:#947234;font-size:11px;margin-bottom:8px}
+    .values{background:linear-gradient(125deg,#176344,#2b8657);color:white}
+    .values .section-head h2{color:white}
+    .values .section-head p{color:#cbd9cf}
+    .values-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .value{border:1px solid #ffffff24;background:#ffffff08;border-radius:20px;padding:24px 18px;text-align:center}
+    .value .symbol{font-size:28px;color:var(--gold2)}
+    .value h3{font-size:15px;margin:8px 0;color:#fff}
+    .value p{font-size:12px;color:#c9d8cf;margin:0}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:step}
+    .step{padding:25px;border-radius:20px;border:1px solid var(--line);background:white}
+    .step:before{counter-increment:step;content:"۰" counter(step);display:grid;place-items:center;width:44px;height:44px;border-radius:14px;background:var(--green);color:var(--gold2);font-weight:800;margin-bottom:15px}
+    .step h3{margin:0 0 8px;color:var(--green);font-size:16px}
+    .step p{margin:0;color:var(--muted);font-size:13px}
+    .cta{padding:0 0 85px}
+    .cta-box{position:relative;overflow:hidden;background:linear-gradient(110deg,#d9b66d,#f0dca8);border-radius:28px;padding:38px 42px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+    .cta-box:after{content:"۞";position:absolute;left:22%;top:-115px;font-size:270px;color:#fff4d233}
+    .cta-copy{position:relative;z-index:1}
+    .cta-copy h2{margin:0;color:#173b2b;font-size:26px}
+    .cta-copy p{margin:7px 0 0;color:#4f563e;font-size:13px}
+    .cta .btn{position:relative;z-index:1;background:var(--green);color:white;white-space:nowrap}
+    footer{background:#123e2b;color:#e7f3e8;padding:48px 0 20px}
+    .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:40px}
+    footer .brand strong{color:white} footer .brand small{color:var(--gold)}
+    footer p,footer li{color:#b6c9bd;font-size:12px}
+    footer ul{list-style:none;padding:0;margin:10px 0}
+    footer li{margin:6px 0}
+    footer li a{color:#f1dca8;text-decoration:underline;text-underline-offset:3px}
+    footer li a:hover{color:#fff}
+    footer h3{font-size:14px;color:var(--gold2);margin:0 0 12px}
+    .copyright{border-top:1px solid #ffffff1c;margin-top:28px;padding-top:16px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:#94aa9b;font-size:11px}
+    .toast{position:fixed;bottom:20px;left:20px;z-index:100;background:#176344;color:white;padding:13px 18px;border-radius:14px;box-shadow:var(--shadow);font-size:13px;max-width:320px;display:none}
+    .toast.show{display:block;animation:pop .25s ease}
+    @keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+    @media(max-width:900px){
+      .navlinks{gap:13px;font-size:12px}.brand{min-width:unset}.nav>.btn{display:none}
+      .hero-grid{gap:25px;padding:55px 0 70px}.arch{height:365px}.hero-art{min-height:350px}
+      .about-grid{gap:30px}.cards{gap:13px}.program-card{padding:21px}
+      .values-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:680px){
+      .topbar .container{justify-content:center}.topbar span:nth-child(2){display:none}
+      .nav{min-height:70px}.menu-toggle{display:block}.navlinks{display:none;position:absolute;top:70px;right:4%;left:4%;background:#fffdf7;border:1px solid var(--line);border-radius:18px;padding:15px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch;gap:0}
+      .navlinks.open{display:flex}.navlinks a{padding:9px 10px;border-bottom:1px solid #f0eadc}.navlinks a:last-child{border-bottom:0}
+      .brand-mark{width:44px;height:44px}.brand strong{font-size:13px}.brand small{font-size:10px}
+      .hero-grid{grid-template-columns:1fr;padding:48px 0 65px;gap:24px}.hero-copy{font-size:14px}.hero-art{min-height:320px;grid-row:1}.arch{width:270px;height:320px}.floating-note{right:0;bottom:0}.floating-seal{left:0;width:70px;height:70px;font-size:10px}
+      .hero-grid>div:first-child{grid-row:2}
+      .stats-grid{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-left:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+      section{padding:62px 0}.about-grid{grid-template-columns:1fr}.about-photo{max-width:450px;margin:auto}.about-photo img{height:350px}.quote-card{right:0}
+      .cards,.teacher-grid,.steps{grid-template-columns:1fr}.teacher-card img{height:330px}.check-list{grid-template-columns:1fr}
+      .cta-box{padding:28px 24px;align-items:flex-start;flex-direction:column}.cta-copy h2{font-size:22px}.footer-grid{grid-template-columns:1fr;gap:22px}
+      .copyright{flex-direction:column}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container">
+      <span>✦ بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</span>
+      <span>خانه‌ای برای انس با قرآن کریم و پرورش اخلاق نیک</span>
+    </div>
+  </div>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="صفحه اصلی">
+        <img class="brand-mark" src="./assets/logo-daralquran.jpg" alt="لوگوی دارالقرآن امام‌الزمان (عج)">
+        <div><strong>دارالقرآن امام‌الزمان (عج)</strong><small>نور قرآن، مسیر زندگی</small></div>
+      </a>
+      <nav class="navlinks" id="navlinks">
+        <a href="#home">صفحه اصلی</a><a href="#about">درباره ما</a><a href="#programs">برنامه‌های آموزشی</a><a href="#teachers">استادان</a><a href="#values">ارزش‌ها</a>
+      </nav>
+      <a class="btn" href="#enroll">آشنایی با برنامه‌ها ↙</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="باز کردن منو" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">به خانه نور و معرفت خوش آمدید</div>
+          <h1>با قرآن، <em>دل‌ها را روشن</em><br>و زندگی را زیباتر کنیم</h1>
+          <p class="hero-copy">دارالقرآن امام‌الزمان (عج)، فضایی برای یادگیری قرآن کریم، آشنایی با تجوید، تقویت حفظ و پرورش اخلاق قرآنی است؛ جایی که دانش، ایمان و مهربانی در کنار هم رشد می‌کنند.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#programs">مشاهده برنامه‌های آموزشی <span>←</span></a>
+            <a class="btn btn-outline" href="#about">بیشتر درباره دارالقرآن</a>
+          </div>
+          <div class="hero-notes"><span>✧ آموزش مرحله‌به‌مرحله</span><span>✧ محیط اخلاقی و آموزشی</span><span>✧ همراهی با خانواده‌ها</span></div>
+        </div>
+        <div class="hero-art">
+          <div class="arch"><div class="arch-inner"><img src="./assets/ostad-jaafar-formal.jpg" alt="تصویر استاد جعفر محمدی"></div></div>
+          <div class="floating-seal">قرآن<br>چراغ راه</div>
+          <div class="floating-note">استاد جعفر محمدی<small>استاد و همراه آموزشی</small></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container stats">
+      <div class="stats-grid">
+        <div class="stat"><strong>قرآن</strong><span>محور اصلی آموزش</span></div>
+        <div class="stat"><strong>تجوید</strong><span>قرائت درست و زیبا</span></div>
+        <div class="stat"><strong>حفظ</strong><span>گام‌به‌گام و منظم</span></div>
+        <div class="stat"><strong>اخلاق</strong><span>عمل به آموزه‌های قرآنی</span></div>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="container about-grid">
+        <div class="about-photo">
+          <img src="./assets/ostad-jaafar-casual.jpg" alt="استاد جعفر محمدی">
+          <div class="quote-card">«بهترین آموزش، چراغی است که راه زندگی را روشن کند.»<small>پیام آموزشی دارالقرآن</small></div>
+        </div>
+        <div class="about-text">
+          <div class="section-kicker">درباره دارالقرآن</div>
+          <h2>آموزش قرآن؛ فراتر از خواندن واژه‌ها</h2>
+          <p>هدف دارالقرآن امام‌الزمان (عج)، فراهم‌کردن محیطی آرام و الهام‌بخش برای آشنایی با کلام الهی و پرورش نسلی آگاه، بااخلاق و مسئولیت‌پذیر است.</p>
+          <p>در کنار آموزش قرائت و قواعد تجوید، به نظم، احترام، همکاری و پیوند آموزه‌های قرآن با زندگی روزمره نیز توجه می‌شود.</p>
+          <ul class="check-list">
+            <li>آموزش از سطح پایه</li><li>تقویت قرائت صحیح</li>
+            <li>برنامه‌ریزی برای حفظ</li><li>توجه به اخلاق و رفتار</li>
+            <li>تمرین و مرور منظم</li><li>ارتباط سازنده با خانواده</li>
+          </ul>
+          <a class="btn btn-green" href="#programs">آشنایی با دوره‌ها ←</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="programs" id="programs">
+      <div class="container">
+        <div class="section-head"><div class="section-kicker">برنامه‌های آموزشی</div><h2>هر گام، نزدیک‌تر به نور قرآن</h2><p>نمونه‌ای از بخش‌هایی که می‌توانند مطابق برنامه واقعی دارالقرآن تنظیم شوند.</p></div>
+        <div class="cards">
+          <article class="program-card"><div class="program-icon">۞</div><h3>روخوانی و روان‌خوانی</h3><p>آشنایی با حروف، حرکات و تمرین خواندن درست آیات قرآن با روش ساده و مرحله‌به‌مرحله.</p><span class="tag">سطح پایه</span></article>
+          <article class="program-card"><div class="program-icon">❖</div><h3>قواعد تجوید</h3><p>شناخت قواعد و صفات حروف، مخارج و تمرین عملی برای بهتر و صحیح‌تر خواندن قرآن کریم.</p><span class="tag">آموزش مهارتی</span></article>
+          <article class="program-card"><div class="program-icon">☾</div><h3>حفظ قرآن کریم</h3><p>تقسیم درس به بخش‌های کوچک، تکرار منظم و مرور محفوظات برای یادگیری پایدار.</p><span class="tag">برنامه منظم</span></article>
+          <article class="program-card"><div class="program-icon">✧</div><h3>ترتیل و صوت قرآنی</h3><p>تمرین آرامش در قرائت، رعایت قواعد و توجه به زیبایی و وضوح تلاوت.</p><span class="tag">تمرین عملی</span></article>
+          <article class="program-card"><div class="program-icon">♡</div><h3>اخلاق و معارف اسلامی</h3><p>آشنایی با ارزش‌هایی مانند راست‌گویی، احترام به والدین، نظم، مهربانی و مسئولیت‌پذیری.</p><span class="tag">پرورش اخلاق</span></article>
+          <article class="program-card"><div class="program-icon">✦</div><h3>ارزیابی و مرور</h3><p>مرور درس‌ها، سنجش پیشرفت و ارائه بازخورد برای شناخت بهتر نقاط قوت و نیازهای آموزشی.</p><span class="tag">پیگیری پیشرفت</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="teachers">
+      <div class="container">
+        <div class="section-head"><div class="section-kicker">چهره آموزشی</div><h2>استاد جعفر محمدی</h2><p>استاد و همراه مسیر یادگیری؛ با تأکید بر آموزش روشن، اخلاق نیک و رشد پیوسته.</p></div>
+        <div class="teacher-grid">
+          <article class="teacher-card"><img src="./assets/ostad-jaafar-profile.jpg" alt="تصویر استاد جعفر محمدی در فضای سبز"><div class="teacher-info"><span class="teacher-label">آموزش و راهنمایی</span><h3>استاد جعفر محمدی</h3><p>همراه شاگردان در مسیر آموختن و تمرین</p></div></article>
+          <article class="teacher-card"><img src="./assets/ostad-jaafar-formal.jpg" alt="تصویر رسمی استاد جعفر محمدی"><div class="teacher-info"><span class="teacher-label">دانش و مسئولیت</span><h3>آموزش با نظم و احترام</h3><p>توجه به فهم درست، تمرین و اخلاق آموزشی</p></div></article>
+          <article class="teacher-card"><img src="./assets/ostad-jaafar-casual.jpg" alt="تصویر استاد جعفر محمدی با لباس روشن"><div class="teacher-info"><span class="teacher-label">رشد و انگیزه</span><h3>همراهی در مسیر پیشرفت</h3><p>تشویق به تلاش، پرسش‌گری و یادگیری پیوسته</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="values" id="values">
+      <div class="container">
+        <div class="section-head"><div class="section-kicker">راه و ارزش‌ها</div><h2>قرآن را بیاموزیم و در زندگی جاری سازیم</h2><p>آموزش موفق، هم دانش را تقویت می‌کند و هم رفتار و شخصیت را پرورش می‌دهد.</p></div>
+        <div class="values-grid">
+          <div class="value"><div class="symbol">✧</div><h3>اخلاص</h3><p>آموختن با نیت پاک و هدف نیک</p></div>
+          <div class="value"><div class="symbol">❖</div><h3>احترام</h3><p>حرمت استاد، شاگرد، خانواده و هم‌درس</p></div>
+          <div class="value"><div class="symbol">☼</div><h3>پشتکار</h3><p>تمرین منظم و پیشرفت قدم‌به‌قدم</p></div>
+          <div class="value"><div class="symbol">♡</div><h3>مهربانی</h3><p>رفتار نیک و همکاری با دیگران</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="enroll">
+      <div class="container">
+        <div class="section-head"><div class="section-kicker">مسیر پیوستن</div><h2>چگونه با برنامه‌های دارالقرآن آشنا شویم؟</h2><p>برای نهایی‌کردن ثبت‌نام و معلومات تماس، اطلاعات رسمی مرکز باید در این بخش درج شود.</p></div>
+        <div class="steps">
+          <div class="step"><h3>آشنایی با دوره‌ها</h3><p>دوره مورد نظر و سطح آموزشی مناسب شاگرد را مشخص کنید.</p></div>
+          <div class="step"><h3>گرفتن معلومات</h3><p>از مسئول دارالقرآن درباره زمان درس، شرایط و مدارک لازم بپرسید.</p></div>
+          <div class="step"><h3>تکمیل ثبت‌نام</h3><p>پس از تأیید اطلاعات و زمان‌بندی رسمی، مراحل ثبت‌نام را انجام دهید.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container"><div class="cta-box">
+        <div class="cta-copy"><h2>با قرآن، آینده‌ای روشن‌تر بسازیم</h2><p>دانش، ایمان و اخلاق؛ سه چراغ برای پیمودن راه زندگی.</p></div>
+        <a class="btn" href="https://wa.me/93774699508" target="_blank" rel="noopener">پرسش درباره ثبت‌نام در واتساپ ↗</a>
+      </div></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div><a class="brand" href="#home"><img class="brand-mark" src="./assets/logo-daralquran.jpg" alt="لوگوی دارالقرآن امام‌الزمان (عج)"><div><strong>دارالقرآن امام‌الزمان (عج)</strong><small>نور قرآن، مسیر زندگی</small></div></a><p>فضایی برای یادگیری قرآن کریم، پرورش اخلاق و رشد معنوی؛ با امید به ساختن جامعه‌ای آگاه‌تر و مهربان‌تر.</p></div>
+        <div><h3>دسترسی سریع</h3><ul><li><a href="#about">درباره ما</a></li><li><a href="#programs">برنامه‌های آموزشی</a></li><li><a href="#teachers">استاد جعفر محمدی</a></li><li><a href="#enroll">مراحل آشنایی و ثبت‌نام</a></li></ul></div>
+        <div><h3>تماس با استاد جعفر محمدی</h3>
+          <p>برای دریافت معلومات درباره دوره‌ها، زمان درس‌ها و راهنمای ثبت‌نام، از راه‌های زیر با استاد تماس بگیرید:</p>
+          <ul>
+            <li>📱 شماره اول: <a href="tel:+93774699508" dir="ltr">0774 699 508</a></li>
+            <li>📱 شماره دوم: <a href="tel:+93786890060" dir="ltr">0786 890 060</a></li>
+            <li>🟢 واتساپ: <a href="https://wa.me/93774699508" target="_blank" rel="noopener">پیام به شماره اول</a> · <a href="https://wa.me/93786890060" target="_blank" rel="noopener">پیام به شماره دوم</a></li>
+            <li>💬 ایمو (IMO): با جست‌وجوی یکی از شماره‌های بالا در ایمو تماس بگیرید.</li>
+            <li>✉️ جیمیل: <a href="mailto:Jafarmohammadi491@gmail.com" dir="ltr">Jafarmohammadi491@gmail.com</a></li>
+          </ul>
+          <p>برای ثبت‌نام، ابتدا از طریق تماس یا واتساپ درباره دوره مناسب، زمان درس‌ها و شرایط لازم معلومات بگیرید؛ سپس ثبت‌نام را با مسئول دارالقرآن نهایی کنید.</p>
+        </div>
+      </div>
+      <div class="copyright"><span>© دارالقرآن امام‌الزمان (عج) — حقوق محفوظ است.</span><span>طراحی با عشق به قرآن کریم ✦</span></div>
+    </div>
+  </footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navlinks = document.getElementById('navlinks');
+    menuToggle.addEventListener('click', () => {
+      const opened = navlinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(opened));
+      menuToggle.textContent = opened ? '×' : '☰';
+    });
+    navlinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navlinks.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.textContent = '☰';
+    }));
+    const toast = document.getElementById('toast');
+    
+  </script>
+</body>
+</html>
